@@ -37,7 +37,7 @@ with data:
 with user_input:
     sel_col, disp_col = st.columns(2)
 
-    skill_level = sel_col.slider("1) What's your gardening experience level? (1 = beginner, 2 = intermediate 3 = expert)", min_value=1, max_value=3, value=2, step=1)
+    skill_level = sel_col.slider("1) What's your gardening experience level? (1 = beginner, 2 = intermediate, 3 = expert)", min_value=1, max_value=3, value=2, step=1)
 
     vegetable = sel_col.selectbox("2) What's your favorite vegetable?", options=['Artichokes', 'Arugula',
  'Asparagus', 'Bush beans (green beans)', 'Pole beans (green beans)', 'Beets', 'Bok Choy', 'Broccoli', 'Brussel Sprouts', 'Cabbage',
