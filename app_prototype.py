@@ -10,6 +10,8 @@ data = st.container()
 function = st.container()
 user_input = st.container()
 
+st.spinner(text='Loading page...')
+
 st.sidebar.title("About")
 st.sidebar.info("This app was created by Adam Swan - October 2021")
 st.sidebar.title("Sources")
@@ -93,8 +95,11 @@ with function:
         st.header("Tips for getting additional results.")
         st.write("1. Hardiness zones aren't black and white, you're welcome to look outside of your local zone but those plants will likely require more attention and be more susceptible to environmental conditions.")
         st.write("2. Try searching for some of your other favorite vegetables to see what results you get.")
+        st.write("3. Take a risk and increase your skill level to see what new plants show up.")
 
 recommender = st.button('Show me the veggies!')
 
 if recommender:
     pull_veggie_v6(vegetable, skill_level, hardiness_zone)
+
+st.spinner(text='Retrieving plants...')
