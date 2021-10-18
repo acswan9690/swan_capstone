@@ -11,7 +11,9 @@ function = st.container()
 user_input = st.container()
 
 st.sidebar.title("About")
-st.sidebar.info("This app was created by Adam Swan in October 2021")
+st.sidebar.info("This app was created by Adam Swan - October 2021")
+st.sidebar.title("Sources")
+st.sidebar.info("1. https://gardening.cals.cornell.edu/ \n 2. https://www.almanac.com/")
 
 with header:
     st.title('Welcome to the Swan Vegetable Garden Assistant App (Alpha)')
@@ -37,7 +39,7 @@ with user_input:
 
     skill_level = sel_col.slider("1) What's your gardening experience level? (1 = beginner, 2 = intermediate 3 = expert)", min_value=1, max_value=3, value=2, step=1)
 
-    vegetable = sel_col.selectbox('2) What is your favorite vegetable?', options=['Artichokes', 'Arugula',
+    vegetable = sel_col.selectbox("2) What's your favorite vegetable?", options=['Artichokes', 'Arugula',
  'Asparagus', 'Bush beans (green beans)', 'Pole beans (green beans)', 'Beets', 'Bok Choy', 'Broccoli', 'Brussel Sprouts', 'Cabbage',
  'Carrots', 'Cauliflower', 'Celery', 'Chives', 'Collards', 'Corn', 'Cucumbers', 'Eggplant', 'Garlic', 'Kale',
  'Leeks', 'Lettuce', 'Mustard Greens', 'Onions', 'Parsnips', 'Peas', 'Peppers', 'Potatoes', 'Pumpkins', 'Radishes',
