@@ -7,8 +7,9 @@ import pickle as pkle
 header = st.container()
 overview = st.container()
 data = st.container()
-function = st.container()
 user_input = st.container()
+function = st.container()
+
 
 st.spinner(text='Loading page...')
 
@@ -65,13 +66,22 @@ with function:
                     if veg_info['plant'][num] == veg and veg_info['difficulty'][num] <= skill_level and (hardiness_zone in veg_info['hardiness_zones'][num]):
                         created_df = created_df.append(veg_info.loc[[num]])
 
+        new_veg_lst = created_df['plant'].tolist()
+        final_lst = []
+
+        for val in veg_lst:
+            if val in new_veg_lst:
+                final_lst.append(val)
+
+        final_lst = sorted(final_lst)
+
         st.title("Our top picks for you are...")
 
         for num in range(0, created_df.shape[0]):
             st.write()
-            st.header(f"#{num+1} - {veg_lst[num]}!")
+            st.header(f"#{num+1} - {final_lst[num]}!")
             st.write()
-            st.write(f"*A few important things to know before you grow {veg_lst[num]}:*")
+            st.write(f"*A few important things to know before you grow **{final_lst[num].lower()}**:*")
             st.write()
             st.write(f"**Optimal sun exposure:** {created_df.iloc[num][1]}")
             st.write()
@@ -79,17 +89,15 @@ with function:
             st.write()
             st.write(f"**Moisture level:** {created_df.iloc[num][3]}")
             st.write()
-            st.write(f"**Expected spread:** {created_df.iloc[num][7]}")
+            st.write(f"**Expected spread:** {created_df.iloc[num][8]}")
             st.write()
-            st.write(f"**Expected height:** {created_df.iloc[num][8]}")
+            st.write(f"**Expected height:** {created_df.iloc[num][7]}")
             st.write()
             st.write(f"**Estimated time to harvest:** {created_df.iloc[num][9]}")
             st.write()
             st.write(f"**Frost tolerance:** {created_df.iloc[num][-5]}")
             st.write()
-            st.write(f"**Origin:** {created_df.iloc[num][-4]}")
-            st.write()
-            st.write(f"**Detailed instructions:** {created_df.iloc[num][-1]}")
+            st.write(f"**Detailed information:** {created_df.iloc[num][-1]}")
             st.write("*" * 45)
 
         st.header("Tips for getting additional results.")
