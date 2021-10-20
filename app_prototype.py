@@ -44,7 +44,7 @@ with user_input:
 
     sel_col, disp_col = st.columns(2)
 
-    skill_level = sel_col.slider("1) What's your gardening experience level? (1 = beginner, 2 = intermediate, 3 = experienced)", min_value=1, max_value=3, value=2, step=1)
+    skill_level = sel_col.slider("1) How much experience do you have gardening? (1 = none, 2 = a little bit, 3 = you've grown a few things)", min_value=1, max_value=3, value=2, step=1)
 
     vegetable_1 = sel_col.selectbox("2) What's your favorite vegetable?", options=options_lst)
 
@@ -59,7 +59,7 @@ with user_input:
     hardiness_zone = sel_col.selectbox("5) What's your hardiness zone? (please reference the below map)", options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
 
 with function:
-    def pull_veggie_v6(vegetable_1, vegetable_2, skill_level, hardiness_zone):
+    def pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone):
         veg_lst_1 = recommender_df[['veggie_name', vegetable_1]].sort_values(by=vegetable_1)[1:11]
         veg_lst_1 = veg_lst_1['veggie_name'].tolist()
 
@@ -128,6 +128,6 @@ with function:
     recommender = st.button('Show me the veggies!')
 
     if recommender:
-        pull_veggie_v6(vegetable_1, vegetable_2, skill_level, hardiness_zone)
+        pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone)
 
         st.spinner(text='Retrieving plants...')
