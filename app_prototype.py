@@ -99,7 +99,7 @@ with function:
 
         for num in range(0, created_df.shape[0]):
             st.write()
-            st.header(f"#{num+1} - {final_lst[num]}!")
+            st.header(f"#{num+1} - {final_lst[num]}")
             st.write()
             st.write(f"*A few important things to know before you grow **{final_lst[num].lower()}**:*")
             st.write()
