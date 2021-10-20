@@ -10,6 +10,7 @@ def app():
     data = st.container()
     user_input = st.container()
     function = st.container()
+    sidebar = st.sidebar.container()
 
     with header:
         st.title('Welcome to the Swan Vegetable Garden Assistant App (Alpha)')

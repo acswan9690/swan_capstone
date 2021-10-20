@@ -1,0 +1,89 @@
+﻿vegetable,flavor_family,texture,prepared
+artichokes,mild/neutral,soft-chewy,roast
+artichokes,mild/neutral,soft-chewy,steam
+arugula,spicy,soft-chewy,salad
+arugula,spicy,soft-chewy,salad
+asparagus,grassy,crunchy,salad
+asparagus,grassy,crunchy,roast
+asparagus,grassy,crunchy,saute
+asparagus,grassy,crunchy,puree
+beets,sweet,crisp-chewy,steam
+beets,sweet,crisp-chewy,roast
+peppers,spicy,crunchy,salad
+peppers,spicy,crunchy,roast
+peppers,spicy,crunchy,saute
+bok choy,mild/neutral,crunchy,steam
+bok choy,mild/neutral,crunchy,saute
+broccoli,earthy/pungent,crisp-chewy,salad
+broccoli,earthy/pungent,crisp-chewy,steam
+broccoli,earthy/pungent,crisp-chewy,roast
+broccoli,earthy/pungent,crisp-chewy,saute
+brussel sprouts,earthy/pungent,crisp-chewy,steam
+brussel sprouts,earthy/pungent,crisp-chewy,roast
+brussel sprouts,earthy/pungent,crisp-chewy,saute
+cabbage,earthy/pungent,crisp-chewy,salad
+cabbage,earthy/pungent,crisp-chewy,saute
+carrots,sweet,crisp-chewy,salad
+carrots,sweet,crisp-chewy,steam
+carrots,sweet,crisp-chewy,roast
+carrots,sweet,crisp-chewy,saute
+cauliflower,earthy/pungent,soft-chewy,steam
+cauliflower,earthy/pungent,soft-chewy,roast
+cauliflower,earthy/pungent,soft-chewy,saute
+cauliflower,earthy/pungent,soft-chewy,pureed soup
+celery,grassy,crunchy,salad
+celery,grassy,crunchy,saute
+swiss chard,grassy,crisp-chewy,saute
+swiss chard,grassy,crisp-chewy,saute
+corn,sweet,crisp-chewy,salad
+corn,sweet,crisp-chewy,saute
+corn,sweet,crisp-chewy,boil
+cucumber,grassy,soft-chewy,noodles
+cucumber,grassy,soft-chewy,salad
+eggplant,mild/neutral,soft-chewy,roast
+eggplant,mild/neutral,soft-chewy,saute
+collards,earthy/pungent,soft-chewy,saute
+collards,earthy/pungent,soft-chewy,boil
+leeks,spicy,soft-chewy,roast
+leeks,spicy,soft-chewy,saute
+mustard greens,spicy,soft-chewy,saute
+mustard greens,spicy,soft-chewy,saute
+onions,spicy,soft-chewy,salad
+onions,spicy,soft-chewy,saute
+onions,spicy,soft-chewy,roast
+parsnips,earthy/pungent,soft-chewy,roast
+parsnips,earthy/pungent,soft-chewy,saute
+parsnips,earthy/pungent,soft-chewy,boil
+parsnips,mild/neutral,soft-chewy,pureed soup
+potatoes,mild/neutral,starchy,roast
+potatoes,mild/neutral,starchy,saute
+potatoes,mild/neutral,starchy,boil
+potatoes,mild/neutral,starchy,pureed soup
+bush beans (beans),grassy,crisp-chewy,saute
+bush beans (beans),grassy,crisp-chewy,saute
+kale,earthy/pungent,crisp-chewy,salad
+kale,earthy/pungent,crisp-chewy,roast
+kale,earthy/pungent,crisp-chewy,saute
+radishes,spicy,crunchy,salad
+radishes,spicy,crunchy,roast
+rutabagas,earthy/pungent,crisp-chewy,roast
+rutabagas,earthy/pungent,crisp-chewy,saute
+rutabagas,earthy/pungent,crisp-chewy,boil
+rutabagas,earthy/pungent,crisp-chewy,pureed soup
+peas,sweet,soft-chewy,saute
+peas,sweet,soft-chewy,salad
+squash,sweet,soft-creamy,roast
+spinach,grassy,soft-creamy,salad
+spinach,grassy,soft-creamy,saute
+tomatoes,sweet,soft-chewy,salad
+tomatoes,sweet,soft-chewy,roast
+tomatoes,sweet,soft-chewy,saute
+tomatoes,sweet,soft-chewy,pureed soup
+turnips,spicy,crisp-chewy,roast
+turnips,spicy,crisp-chewy,saute
+turnips,spicy,crisp-chewy,pureed soup
+turnips,spicy,crisp-chewy,noodles
+garlic,spicy,soft-chewy,roast
+garlic,spicy,soft-chewy,saute
+lettuce,mild/neutral,crisp-chewy,salad
+lettuce,mild/neutral,crisp-chewy,salad
