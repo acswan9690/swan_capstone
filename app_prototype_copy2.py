@@ -48,15 +48,15 @@ with user_input:
 
     vegetable_1 = sel_col.selectbox("2) What's your favorite vegetable?", options=options_lst)
 
-    vegetable_2 = sel_col.selectbox("3) What's your second favorite vegetable?", options=options_lst)
+    # options_lst.remove(vegetable_1)
 
-    vegetable_3 = sel_col.selectbox("4) What's your third favorite vegetable?", options=options_lst)
+    vegetable_2 = sel_col.selectbox("3) What's your second favorite vegetable?", options=options_lst)
 
     image = Image.open('./data/hardiness_zones_map.jpg')
     st.image(image)
 
 
-    hardiness_zone = sel_col.selectbox("5) What's your hardiness zone? (please reference the below map)", options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
+    hardiness_zone = sel_col.selectbox('4) What is your hardiness zone? (please reference the below map)', options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
 
 with function:
     def pull_veggie_v6(vegetable_1, vegetable_2, skill_level, hardiness_zone):
@@ -66,8 +66,7 @@ with function:
         veg_lst_2 = recommender_df[['veggie_name', vegetable_2]].sort_values(by=vegetable_2)[1:11]
         veg_lst_2 = veg_lst_2['veggie_name'].tolist()
 
-        veg_lst_3 = recommender_df[['veggie_name', vegetable_3]].sort_values(by=vegetable_3)[1:11]
-        veg_lst_3 = veg_lst_3['veggie_name'].tolist()
+
 
         created_df = pd.DataFrame(columns=veg_info.columns)
 
@@ -75,11 +74,7 @@ with function:
             if val not in veg_lst_1:
                 veg_lst_1.append(val)
 
-        for val in veg_lst_3:
-            if val not in veg_lst_2:
-                veg_lst_2.append(val)
-
-        veg_lst = veg_lst_2
+        veg_lst = veg_lst_1
 
         for num in range(0, veg_info.shape[0]):
             for veg in veg_lst:
