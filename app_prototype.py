@@ -86,6 +86,8 @@ with function:
                     if veg_info['plant'][num] == veg and veg_info['difficulty'][num] <= skill_level and (hardiness_zone in veg_info['hardiness_zones'][num]):
                         created_df = created_df.append(veg_info.loc[[num]])
 
+        created_df['difficulty'] = created_df['difficulty'].map({1: '1 - Easy', 2: '2 - Moderate', 3: '3 - Challenging'})
+
         new_veg_lst = created_df['plant'].tolist()
         final_lst = []
 
@@ -102,6 +104,8 @@ with function:
             st.header(f"#{num+1} - {final_lst[num]}")
             st.write()
             st.write(f"*A few important things to know before you grow **{final_lst[num].lower()}**:*")
+            st.write()
+            st.write(f"**Difficulty level:** {created_df.iloc[num][6]}")
             st.write()
             st.write(f"**Optimal sun exposure:** {created_df.iloc[num][1]}")
             st.write()

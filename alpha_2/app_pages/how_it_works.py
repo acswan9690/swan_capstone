@@ -19,9 +19,3 @@ def app():
 
         st.write("I reached out to friends, family, and my data science cohort to participate in a 37 question survey to get their feedback on how they rated 37 vegetables on a scale of 1 - 5, with 1 being disgusting and 5 being delicious - all subjective. I received a total of 134 responses.")
         st.write('')
-
-        image1 = Image.open('./data/how1.png')
-        st.image(image1)
-
-        image2 = Image.open('./data/test1.png')
-        st.image(image2)
