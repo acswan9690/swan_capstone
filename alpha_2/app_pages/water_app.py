@@ -39,7 +39,7 @@ def app():
 
         size_of_garden = st.text_input("4) Please enter the square footage of your garden", '')
 
-        st.write("Please do not press the 'estimate' button again once you've started the function (we're working on this bugs)")
+        st.write("Please do not press the 'estimate' button again once you've started the calculation (we're working on this bugs)")
 
         estimate = st.button('Estimate')
 

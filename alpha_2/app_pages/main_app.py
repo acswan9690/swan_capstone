@@ -43,10 +43,12 @@ def app():
 
         vegetable_3 = st.selectbox("4) What's your third favorite vegetable?", options=options_lst)
 
-        hardiness_zone = st.selectbox("5) What's your hardiness zone? (please reference the below map)", options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
+        hardiness_zone = st.selectbox("5) What's your hardiness zone? (please reference the map below)", options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
 
         image = Image.open('./data/hardiness_zones_map.jpg')
         st.image(image)
+
+        st.write(type('asd'))
 
     with function:
         def pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone):
@@ -114,7 +116,7 @@ def app():
             st.write("2. Try searching for some of your other favorite vegetables to see what results you get.")
             st.write("3. Take a risk and increase your skill level to see what new plants show up.")
 
-        recommender = st.button('Show me the veggies!')
+        recommender = st.button('Show me the veggies')
 
         if recommender:
             pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone)
