@@ -39,6 +39,8 @@ def app():
 
         size_of_garden = st.text_input("4) Please enter the square footage of your garden", '')
 
+        st.write("Please do not press the 'estimate' button again once you've started the function (we're working on this bugs)")
+
         estimate = st.button('Estimate')
 
     with function:
@@ -52,7 +54,6 @@ def app():
 
             if day_int > month_day_dict[month_str]:
                 return st.error('Please enter a day that exists in the specified month')
-
             else:
                 pass
 
@@ -61,41 +62,33 @@ def app():
             long = round(float(county_coords['INTPTLON']), 2)
 
             if day_int+7 > month_day_dict[month_str]:
-
                 next_month = '0' + str(list(month_day_dict.keys()).index(month_str)+2)
                 next_month_day = month_day_dict[month_str] - day_int
                 next_month_day = 7 - next_month_day
                 start_date = month_str + '-' + str(day_int)
                 end_date = next_month + '-' +str(next_month_day)
-
             else:
                 start_date = month_str + '-' + str(day_int)
                 end_date = month_str + '-' + str(day_int+7)
 
             urls = []
-
             for year in years:
-
                 url = 'http://api.worldweatheronline.com/premium/v1/past-weather.ashx?key=ee035e8c8a26404e99b183309212110'
                 url = url + '&format=json'
                 url = url + '&q=' + str(lat) + ',' + str(long)
                 url = url + '&tp=24'
                 url = url + '&date=' + str(year) + '-' + start_date
                 url = url + '&enddate=' + str(year) + '-' + end_date
-
                 urls.append(url)
 
             data = []
-
             for i, url in enumerate(urls):
-                time.sleep(1)
+                # time.sleep(1)
                 res = requests.get(url)
                 data.append(res.json())
 
             list_of_cols = ['date', 'maxtempF', 'mintempF', 'precipInches']
-
             list_of_records = []
-
             for i in range(len(data)):
                 for num in range(0, 7):
                     list_of_records.append([data[i]['data']['weather'][num]['date'],
@@ -117,7 +110,7 @@ def app():
                 st.write('')
                 st.write(f"**The average rainfall for the specified time period is**: {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water:** {water_amt} inches per sq/ft")
+                st.write(f"**Estimated inches of water:** {round(water_amt, 2)} inches per sq/ft")
                 st.write('')
                 st.write(f"**Estimated gallons of water:** {gallons} gallons of water for you entire garden")
 
@@ -128,7 +121,7 @@ def app():
                 st.write('')
                 st.write(f"**The average rainfall for the specified time period is:** {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water:** {water_amt} inches per sq/ft")
+                st.write(f"**Estimated inches of water:** {round(water_amt, 2)} inches per sq/ft")
                 st.write('')
                 st.write(f"**Estimated gallons of water:** {gallons} gallons of water for your entire garden")
 
