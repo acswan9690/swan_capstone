@@ -6,11 +6,9 @@ from PIL import Image
 def app():
 
     header = st.container()
-    overview = st.container()
     data = st.container()
     user_input = st.container()
     function = st.container()
-    sidebar = st.sidebar.container()
 
     with header:
         st.title('Welcome to the Swan Vegetable Garden Assistant App (Alpha)')
@@ -36,21 +34,18 @@ def app():
          'Cucumbers', 'Eggplant', 'Garlic', 'Kale', 'Leeks', 'Lettuce', 'Mustard Greens', 'Onions', 'Parsnips', 'Peas', 'Peppers',
           'Potatoes', 'Pumpkins', 'Radishes', 'Rhubarb', 'Rutabagas', 'Shallots', 'Spinach', 'Squash', 'Swiss Chard', 'Tomatoes', 'Turnips']
 
-        sel_col, disp_col = st.columns(2)
+        skill_level = st.slider("1) How much experience do you have gardening? (1 = none, 2 = a little bit, 3 = you've grown a few things)", min_value=1, max_value=3, value=2, step=1)
 
-        skill_level = sel_col.slider("1) How much experience do you have gardening? (1 = none, 2 = a little bit, 3 = you've grown a few things)", min_value=1, max_value=3, value=2, step=1)
+        vegetable_1 = st.selectbox("2) What's your favorite vegetable?", options=options_lst)
 
-        vegetable_1 = sel_col.selectbox("2) What's your favorite vegetable?", options=options_lst)
+        vegetable_2 = st.selectbox("3) What's your second favorite vegetable?", options=options_lst)
 
-        vegetable_2 = sel_col.selectbox("3) What's your second favorite vegetable?", options=options_lst)
+        vegetable_3 = st.selectbox("4) What's your third favorite vegetable?", options=options_lst)
 
-        vegetable_3 = sel_col.selectbox("4) What's your third favorite vegetable?", options=options_lst)
+        hardiness_zone = st.selectbox("5) What's your hardiness zone? (please reference the below map)", options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
 
         image = Image.open('./data/hardiness_zones_map.jpg')
         st.image(image)
-
-
-        hardiness_zone = sel_col.selectbox("5) What's your hardiness zone? (please reference the below map)", options=['2', '3', '4', '5', '6', '7', '8', '9', '10'])
 
     with function:
         def pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone):
