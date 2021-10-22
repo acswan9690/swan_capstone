@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import time
 import requests
-from PIL import Image
 
 def app():
 
@@ -41,9 +40,6 @@ def app():
         size_of_garden = st.text_input("4) Please enter the square footage of your garden", '')
 
         estimate = st.button('Estimate')
-
-        image = Image.open('./data/watering.jpg')
-        st.image(image)
 
     with function:
 
