@@ -43,7 +43,7 @@ def app():
         estimate = st.button('Estimate')
 
     with col2:
-        image = Image.open('./data/water.jfif')
+        image = Image.open('./data/watering.jpg')
         st.image(image)
 
     with function:
