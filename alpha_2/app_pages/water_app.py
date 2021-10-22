@@ -45,7 +45,7 @@ def app():
         estimate = st.button('Estimate')
 
     with function:
-
+        
         months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
         days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         month_day_dict = {months[i]: days[i] for i in range(len(months))}
