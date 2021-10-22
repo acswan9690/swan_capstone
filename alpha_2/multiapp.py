@@ -1,6 +1,5 @@
 # Define the multipage class to manage the multiple apps in our program
 import streamlit as st
-from PIL import Image
 
 class MultiApp:
     """Framework for combining multiple streamlit applications.
