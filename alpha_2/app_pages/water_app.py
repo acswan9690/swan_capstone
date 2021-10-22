@@ -15,7 +15,7 @@ def app():
     col1, col2 = st.columns(2)
 
     with header:
-        st.title('Welcome to the Water Use Predictor App (Alpha)')
+        st.title('Welcome to the Water Use Estimator App (Alpha)')
         st.write('')
         st.write('This app aims to give you an estimate of how much water you need to use in your vegetable garden in 7-day period after the desired date using historical temperature and rainfall data as well as the size of your garden.')
         st.write('')
@@ -25,7 +25,7 @@ def app():
     with data:
         counties = pd.read_csv('./data/counties.csv')
 
-    with col1:
+    with user_input:
         county_lst = sorted(['Allen', 'Lake', 'Columbiana', 'Cuyahoga', 'Morgan', 'Harrison', 'Putnam', 'Muskingum', 'Tuscarawas', 'Wyandot', 'Clark', 'Butler', 'Pike', 'Ottawa', 'Hamilton', 'Coshocton',
         'Fulton', 'Van Wert', 'Washington', 'Wood', 'Fairfield', 'Preble', 'Logan', 'Lawrence', 'Pickaway', 'Jackson', 'Athens', 'Stark', 'Auglaize', 'Brown', 'Belmont', 'Medina', 'Paulding', 'Darke', 'Noble',
         'Union', 'Delaware', 'Mahoning', 'Carroll', 'Meigs', 'Henry', 'Champaign', 'Vinton', 'Lorain', 'Franklin', 'Hancock', 'Crawford', 'Highland', 'Huron', 'Adams', 'Guernsey', 'Morrow', 'Erie', 'Clermont',
@@ -44,9 +44,9 @@ def app():
 
         estimate = st.button('Estimate')
 
-    with col2:
-        image = Image.open('./data/water.jfif')
-        st.image(image)
+    # with col2:
+    #     image = Image.open('./data/water.jfif')
+    #     st.image(image)
 
     with function:
 

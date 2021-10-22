@@ -1,5 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
+from PIL import Image
 from app_pages import main_app, how_it_works, water_app
 
 app = MultiApp()
