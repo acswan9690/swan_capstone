@@ -2,13 +2,15 @@ import streamlit as st
 import pandas as pd
 import time
 import requests
+from PIL import Image
 
 def app():
 
     header = st.container()
     data = st.container()
-    user_input = st.container()
+    col1, col2 = st.columns(2)
     function = st.container()
+
 
     with header:
         st.title('Welcome to the Water Use Estimator App (Alpha)')
@@ -21,7 +23,7 @@ def app():
     with data:
         counties = pd.read_csv('./data/counties.csv')
 
-    with user_input:
+    with col1:
         county_lst = sorted(['Allen', 'Lake', 'Columbiana', 'Cuyahoga', 'Morgan', 'Harrison', 'Putnam', 'Muskingum', 'Tuscarawas', 'Wyandot', 'Clark', 'Butler', 'Pike', 'Ottawa', 'Hamilton', 'Coshocton',
         'Fulton', 'Van Wert', 'Washington', 'Wood', 'Fairfield', 'Preble', 'Logan', 'Lawrence', 'Pickaway', 'Jackson', 'Athens', 'Stark', 'Auglaize', 'Brown', 'Belmont', 'Medina', 'Paulding', 'Darke', 'Noble',
         'Union', 'Delaware', 'Mahoning', 'Carroll', 'Meigs', 'Henry', 'Champaign', 'Vinton', 'Lorain', 'Franklin', 'Hancock', 'Crawford', 'Highland', 'Huron', 'Adams', 'Guernsey', 'Morrow', 'Erie', 'Clermont',
@@ -40,7 +42,12 @@ def app():
 
         estimate = st.button('Estimate')
 
+    with col2:
+        image = Image.open('./data/water.jfif')
+        st.image(image)
+
     with function:
+
         months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
         days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         month_day_dict = {months[i]: days[i] for i in range(len(months))}
