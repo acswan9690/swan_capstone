@@ -44,10 +44,6 @@ def app():
 
         estimate = st.button('Estimate')
 
-    # with col2:
-    #     image = Image.open('./data/water.jfif')
-    #     st.image(image)
-
     with function:
 
         months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
