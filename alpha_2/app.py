@@ -8,9 +8,9 @@ app = MultiApp()
 app.add_app("Vegetable Predictor", main_app.app)
 app.add_app("Watering Estimate", water_app.app)
 
+app.run()
+
 st.sidebar.title("About")
 st.sidebar.info("This app was created by Adam Swan - October 2021")
 st.sidebar.title("Sources")
 st.sidebar.info("1. https://gardening.cals.cornell.edu/ \n 2. https://www.almanac.com/")
-
-app.run()
