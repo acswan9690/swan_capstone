@@ -8,7 +8,7 @@ def app():
 
     header = st.container()
     data = st.container()
-    col1, col2 = st.columns(2)
+    user_input = st.container()
     function = st.container()
 
 
@@ -23,7 +23,7 @@ def app():
     with data:
         counties = pd.read_csv('./data/counties.csv')
 
-    with col1:
+    with user_input:
         county_lst = sorted(['Allen', 'Lake', 'Columbiana', 'Cuyahoga', 'Morgan', 'Harrison', 'Putnam', 'Muskingum', 'Tuscarawas', 'Wyandot', 'Clark', 'Butler', 'Pike', 'Ottawa', 'Hamilton', 'Coshocton',
         'Fulton', 'Van Wert', 'Washington', 'Wood', 'Fairfield', 'Preble', 'Logan', 'Lawrence', 'Pickaway', 'Jackson', 'Athens', 'Stark', 'Auglaize', 'Brown', 'Belmont', 'Medina', 'Paulding', 'Darke', 'Noble',
         'Union', 'Delaware', 'Mahoning', 'Carroll', 'Meigs', 'Henry', 'Champaign', 'Vinton', 'Lorain', 'Franklin', 'Hancock', 'Crawford', 'Highland', 'Huron', 'Adams', 'Guernsey', 'Morrow', 'Erie', 'Clermont',
@@ -42,7 +42,6 @@ def app():
 
         estimate = st.button('Estimate')
 
-    with col2:
         image = Image.open('./data/watering.jpg')
         st.image(image)
 
