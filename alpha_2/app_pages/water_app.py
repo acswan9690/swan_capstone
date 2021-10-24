@@ -12,9 +12,9 @@ def app():
 
 
     with header:
-        st.title('Welcome to the Water Use Estimator App (Alpha)')
+        st.title('Welcome to the Swan Water Use Estimator App (Alpha)')
         st.write('')
-        st.write('This app aims to give you an estimate of how much water you need to use in your vegetable garden in 7-day period after the desired date using historical temperature and rainfall data as well as the size of your garden.')
+        st.write('This app aims to give you an estimate of how much water you need to use in your vegetable garden in 7-day period after the desired date using historical temperatures and rainfall data, as well as the size of your garden.')
         st.write('')
         st.write("**NOTE**: This estimator app currently only works for the 88 counties in the state of Ohio.")
         st.write('')
@@ -39,7 +39,7 @@ def app():
 
         size_of_garden = st.text_input("4) Please enter the square footage of your garden", '')
 
-        st.write("Please do not press the 'estimate' button again once you've started the calculation (we're working on this bugs)")
+        st.write("Please do not press the 'estimate' button again once you've started the calculation (we're working on this bug).")
 
         estimate = st.button('Estimate')
 
@@ -51,6 +51,11 @@ def app():
         years = list(range(2009, 2022))
 
         def water_estimate(month_str, day_int, county, size_of_garden):
+
+            try:
+                int(size_of_garden)
+            except ValueError:
+                st.error('Please enter a whole number for garden square footage')
 
             if day_int > month_day_dict[month_str]:
                 return st.error('Please enter a day that exists in the specified month')
@@ -110,9 +115,9 @@ def app():
                 st.write('')
                 st.write(f"**The average rainfall for the specified time period is**: {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water:** {round(water_amt, 2)} inches per sq/ft")
+                st.write(f"**Estimated inches of water needed:** {round(water_amt, 2)} inches per sq/ft")
                 st.write('')
-                st.write(f"**Estimated gallons of water:** {gallons} gallons of water for you entire garden")
+                st.write(f"**Estimated gallons of water needed:** {gallons} gallons of water for you entire garden")
 
             else:
                 water_amt = 1 - average_precip
@@ -121,9 +126,9 @@ def app():
                 st.write('')
                 st.write(f"**The average rainfall for the specified time period is:** {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water:** {round(water_amt, 2)} inches per sq/ft")
+                st.write(f"**Estimated inches of water needed:** {round(water_amt, 2)} inches per sq/ft")
                 st.write('')
-                st.write(f"**Estimated gallons of water:** {gallons} gallons of water for your entire garden")
+                st.write(f"**Estimated gallons of water needed:** {gallons} gallons of water for your entire garden")
 
     if estimate:
         st.spinner('Calculating...')
