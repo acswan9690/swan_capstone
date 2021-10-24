@@ -48,8 +48,6 @@ def app():
         image = Image.open('./data/hardiness_zones_map.jpg')
         st.image(image)
 
-        st.write(type('asd'))
-
     with function:
         def pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone):
             veg_lst_1 = recommender_df[['veggie_name', vegetable_1]].sort_values(by=vegetable_1)[1:11]
