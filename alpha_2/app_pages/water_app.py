@@ -122,13 +122,13 @@ def app():
             else:
                 water_amt = 1 - average_precip
                 gallons = round((water_amt * 1.56) * size_of_garden, 2)
-                st.write(f"**The average temperature for the specified time period is:** {average_temp} F")
+                st.write(f"**The average temperature for the specified 7-day time period is:** {average_temp} F")
                 st.write('')
-                st.write(f"**The average rainfall for the specified time period is:** {average_precip} inches")
+                st.write(f"**The average rainfall for the specified 7-day time period is:** {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water needed:** {round(water_amt, 2)} inches per sq/ft")
+                st.write(f"**Estimated inches of water needed for the next 7 days:** {round(water_amt, 2)} inches per sq/ft")
                 st.write('')
-                st.write(f"**Estimated gallons of water needed:** {gallons} gallons of water for your entire garden")
+                st.write(f"**Estimated gallons of water needed for the next 7 days:** {gallons} gallons of water for your entire garden")
 
     if estimate:
         st.spinner('Calculating...')
