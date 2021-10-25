@@ -92,6 +92,8 @@ def app():
                 st.write()
                 st.write(f"*A few important things to know before you grow **{final_lst[num].lower()}**:*")
                 st.write()
+                st.write(f"**Difficulty level:** {int(created_df.iloc[num][6])}")
+                st.write()
                 st.write(f"**Optimal sun exposure:** {created_df.iloc[num][1]}")
                 st.write()
                 st.write(f"**Ideal soil conditions:** {created_df.iloc[num][2]}")
