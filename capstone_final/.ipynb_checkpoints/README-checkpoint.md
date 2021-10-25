@@ -1,5 +1,4 @@
 # Vegetable Recommender & Water Usage Planner
----
 
 ### Problem Statement:
 ---
