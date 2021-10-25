@@ -6,7 +6,7 @@ from app_pages import main_app, water_app
 app = MultiApp()
 
 app.add_app("Vegetable Recommender", main_app.app)
-app.add_app("Watering Estimate", water_app.app)
+app.add_app("Watering Estimator", water_app.app)
 
 app.run()
 
