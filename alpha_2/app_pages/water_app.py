@@ -39,7 +39,7 @@ def app():
 
         size_of_garden = st.text_input("4) Please enter the square footage of your garden", '')
 
-        st.write("Please do not press the 'estimate' button again once you've started the calculation (we're working on this bug).")
+        st.write("**IMPORTANT**: Please do not press the 'estimate' button again once you've started the calculation (we're working on fixing the double display bug).")
 
         estimate = st.button('Estimate')
 
@@ -111,13 +111,15 @@ def app():
                 diff = 80 - average_temp
                 water_amt = round(((diff / 10) * .5) + (1 - average_precip), 2)
                 gallons = round((water_amt * 1.56) * size_of_garden, 2)
-                st.write(f"**The average temperature for the specified time period is**: {average_temp} F")
+                st.header(f"Water usage estimate for {start_date} to {end_date}.")
+                st.write('')
+                st.write(f"**The average temperature for the specified time period is**: {average_temp}&deg;F")
                 st.write('')
                 st.write(f"**The average rainfall for the specified time period is**: {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water needed:** {round(water_amt, 2)} inches per sq/ft")
+                st.write(f"**Estimated inches of water needed:** {round(water_amt, 2)} inches per sq/ft or {round(water_amt/ 7, 2)} inches per day")
                 st.write('')
-                st.write(f"**Estimated gallons of water needed:** {gallons} gallons of water for you entire garden")
+                st.write(f"**Estimated gallons of water needed:** {gallons} gallons of water for your entire garden or {round(gallons / 7, 2)} gallons per day")
 
             else:
                 water_amt = 1 - average_precip
@@ -126,13 +128,16 @@ def app():
                 st.write('')
                 st.write(f"**The average rainfall for the specified 7-day time period is:** {average_precip} inches")
                 st.write('')
-                st.write(f"**Estimated inches of water needed for the next 7 days:** {round(water_amt, 2)} inches per sq/ft")
+                st.write(f"**Estimated inches of water needed for the next 7 days:** {round(water_amt, 2)} inches per sq/ft or {round(water_amt/ 7, 2)} inches per day")
                 st.write('')
-                st.write(f"**Estimated gallons of water needed for the next 7 days:** {gallons} gallons of water for your entire garden")
+                st.write(f"**Estimated gallons of water needed for the next 7 days:** {gallons} gallons of water for your entire garden or {round(gallons / 7, 2)} gallons per day")
+
+            st.write('---')
+            st.header('Recommendations to help measure water usage:')
+            st.write("1. Put a simple plastic rain gauge in your garden to measure how much water your garden has received.")
+            st.write("2. Purchase a hose flow guage to track how many gallons you've watered each day.")
+            st.write("3. Remember, the best time to water is early morning or evening so that your soil can properly absorb and retain the moisture.")
 
     if estimate:
-        st.spinner('Calculating...')
-
         water_estimate(month_str, day_int, county, size_of_garden)
-
         st.success('Done')

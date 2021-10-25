@@ -35,7 +35,7 @@ def app():
          'Cucumbers', 'Eggplant', 'Garlic', 'Kale', 'Leeks', 'Lettuce', 'Mustard Greens', 'Onions', 'Parsnips', 'Peas', 'Peppers',
           'Potatoes', 'Pumpkins', 'Radishes', 'Rhubarb', 'Rutabagas', 'Shallots', 'Spinach', 'Squash', 'Swiss Chard', 'Tomatoes', 'Turnips']
 
-        skill_level = st.slider("1) How much experience do you have gardening? (1 = none, 2 = a little bit, 3 = you've grown a few things)", min_value=1, max_value=3, value=2, step=1)
+        skill_level = st.slider("1) How much experience do you have gardening? (1 = none, 2 = a little bit, 3 = you've successfully grown a few things)", min_value=1, max_value=3, value=2, step=1)
 
         vegetable_1 = st.selectbox("2) What's your favorite vegetable?", options=options_lst)
 
@@ -85,7 +85,7 @@ def app():
 
             final_lst = sorted(final_lst)
 
-            st.header(f"**We found {len(final_lst)} vegetables we think you'll like!**")
+            st.header(f"**We found {len(final_lst)} vegetables we think are a good fit for you!**")
 
             for num in range(0, created_df.shape[0]):
                 st.header(f"#{num+1} - {final_lst[num]}")
@@ -113,10 +113,10 @@ def app():
             st.write("1. Hardiness zones aren't black and white, you're welcome to look outside of your local zone but those plants will likely require more attention and be more susceptible to environmental conditions.")
             st.write("2. Try searching for some of your other favorite vegetables to see what results you get.")
             st.write("3. Take a risk and increase your skill level to see what new plants show up.")
+            st.write("4. If you're picky just choose the same vegetable for your all three choices to ensure you only get vegetables similar to your favorite.")
 
         recommender = st.button('Show me the veggies')
 
         if recommender:
             pull_veggie_v6(vegetable_1, vegetable_2, vegetable_3, skill_level, hardiness_zone)
-
-            st.spinner(text='Retrieving plants...')
+            st.success('Done')
